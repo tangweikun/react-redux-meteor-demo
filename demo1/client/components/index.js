@@ -12,7 +12,12 @@ class App extends Component {
           value={this.props.propsValue} onChange={this.changeHandle.bind(this)}
           ref='input'
         />
-      {this.props.propsValue}
+      <p>propsValue-->>>{this.props.propsValue}</p>
+      <p>reducersValue-->>>{this.props.reducersValue}</p>
+      <p>actiontry1Value-->>>{this.props.actiontry1Value}</p>
+      <p>actiontry2Value-->>>{this.props.actiontry2Value}</p>
+      <p>twk-->>>{this.props.twk}</p>
+      <p>v2-->>>{this.props.v2}</p>
       </div>
     )
   }
@@ -23,9 +28,14 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+mapStateToProps = (state) => {
   return {
-    propsValue: state.value
+    propsValue: state.value,
+    reducersValue: state.reducers,
+    actiontry1Value: state.actiontry1,
+    actiontry2Value: state.actiontry2,
+    twk: 't11t',
+    v2: state.v2,
   }
 }
 
