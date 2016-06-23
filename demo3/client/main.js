@@ -3,15 +3,15 @@ import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 
-import counter from './reducers'
-import ComponentT from './components'
+import todoApp from './reducers'
+import App from './components/App'
 
-let store = createStore(counter)  //from reducers
+let store = createStore(todoApp)  //from reducers
 
 $(document).ready(function() {
   render(
     <Provider store={store}>
-      <ComponentT />
+      <App />
     </Provider>, document.getElementById('root')
   )
 })

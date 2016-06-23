@@ -1,19 +1,10 @@
-const counter = (state, action) => {
-  if (typeof state === 'undefined') {
-    return 100
-  }
-  switch (action.type) {
-    case 'increase':
-      return {
-        state + 101,
-      }
-    case 'decrease':
-      return {
-        state - 11,
-      }
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import todos from './todos.js'
+import visibilityFilter from './visibilityFilter'
 
-export default counter
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
+})
+
+export default todoApp
