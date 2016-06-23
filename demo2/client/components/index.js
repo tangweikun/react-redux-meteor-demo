@@ -2,15 +2,16 @@ import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { connect } from 'react-redux'
-import { increaseAction } from '../actions'
+import { increaseAction, decreaseAction } from '../actions'
 
 class Counter extends Component {
   render() {
-    const { value, onIncreaseClick } = this.props
+    const { value, onIncreaseClick, onDecreaseClick } = this.props
     return (
       <div>
-        <span>{value}</span>
+        <p>{value}</p>
         <button onClick={onIncreaseClick}>Increase</button>
+        <button onClick={onDecreaseClick}>Decrease</button>
       </div>
     )
   }
@@ -24,7 +25,8 @@ mapStateToProps = (state) => {
 
 mapDispatchToProps = (dispatch) => {
   return {
-    onIncreaseClick: () => dispatch(increaseAction)
+    onIncreaseClick: () => dispatch(increaseAction),
+    onDecreaseClick: () => dispatch(decreaseAction),
   }
 }
 
