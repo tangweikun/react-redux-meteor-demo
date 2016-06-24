@@ -1,17 +1,18 @@
+import { Meteor } from 'meteor/meteor'
 import React from 'react'
-import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { Router, Route, browserHistory } from 'react-router'
 
-import ReducerT from './reducers'
-import ComponentT from './components'
+import createStore from './store/createStore'
+import App from './containers/App'
 
-let store = createStore(ReducerT)  //from reducers
-
-$(document).ready(function() {
-  render(
-    <Provider store={store}>
-      <ComponentT />
-    </Provider>, document.getElementById('root')
-  )
+Meteor.startup(() => {
+  render((
+    <Provider store={createStore()}>
+      <Router history={browserHistory}>
+        <Route path='/' component={App} />
+      </Router>
+    </Provider>
+  ), document.getElementById('app'))
 })
