@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux'
-import todos from './todos.js'
-import visibilityFilter from './visibilityFilter'
-
-const todoApp = combineReducers({
-  todos,
-  visibilityFilter
-})
-
-export default todoApp
+export const reducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'UPDATE_TASK':
+      return {
+        ...state,
+        tasks: action.tasks
+      }
+  }
+  return state
+}
