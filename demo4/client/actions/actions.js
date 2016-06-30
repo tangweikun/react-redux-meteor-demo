@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 
-export const createMessage = params => {
+export const createMessage = (params) => {
   return dispatch => {
     Meteor.call('createMessage', params, (error) => {
       if (!error) return
