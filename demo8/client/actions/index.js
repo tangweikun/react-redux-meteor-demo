@@ -1,22 +1,14 @@
-let nextTodoId = 0
-export const addTodo = (text) => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  }
+export const increaseAction = {
+  type: 'increase',
 }
 
-export const setVisibilityFilter = (filter) => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
+export const decreaseAction = {
+  type: 'decrease',
 }
 
-export const toggleTodo = (id) => {
+export const change = (value) => {
   return {
-    type: 'TOGGLE_TODO',
-    id
+    type: 'change',
+    value,
   }
 }
