@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
-import { increaseAction, decreaseAction, change } from '../actions'
+import { increaseAction, decreaseAction, change, login } from '../actions'
 import Counter from '../components'
 
 const mapStateToProps = (state) => {
   return {
     count: state.counter.count,
     value: state.change.value,
+    username: state.login.username,
+    password: state.login.password,
   }
 }
 

@@ -12,3 +12,11 @@ export const change = (value) => {
     value,
   }
 }
+
+export const login = (username, password) => {
+  return {
+    type: 'login',
+    username,
+    password,
+  }
+}
