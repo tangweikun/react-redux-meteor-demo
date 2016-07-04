@@ -8,8 +8,6 @@ class Counter extends Component {
   }
   render() {
     const { count, value, onIncreaseClick, onDecreaseClick } = this.props
-    console.log(this.props.onIncreaseClick);
-
     return (
       <div>
         <p>{count}</p>

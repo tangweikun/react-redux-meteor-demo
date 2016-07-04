@@ -2,8 +2,6 @@ const counter = (state = { count: 5 }, action) => {
   const count = state.count
   switch (action.type) {
     case 'increase':
-      console.log("message", state);
-
       return {
         count: count + 2,
       }
